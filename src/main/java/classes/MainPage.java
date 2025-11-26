@@ -1,28 +1,23 @@
 package classes;
 
-// Файл: MainPage.java
 public class MainPage {
-    // Поля класса
+
     private String url;
     private String title;
     private int size;
 
-    // Конструктор без параметров
     public MainPage() {}
 
-    // Конструктор с одним параметром (URL)
     public MainPage(String url) {
         this.url = url;
     }
 
-    // Конструктор с тремя параметрами
     public MainPage(String url, String title, int size) {
         this.url = url;
         this.title = title;
         this.size = size;
     }
 
-    // Метод проверки размера страницы
     public void isSizeLessThan(int maxSize) {
         boolean result = this.size < maxSize;
         if (result) {
@@ -32,7 +27,6 @@ public class MainPage {
         }
     }
 
-    // Дополнительные методы для просмотра текущих значений
     public String getUrl() {
         return url;
     }
@@ -45,9 +39,7 @@ public class MainPage {
         return size;
     }
 
-    // Тестируем класс
     public static void main(String[] args) {
-        // Создаем три разные страницы с использованием трёх конструкторов
         MainPage page1 = new MainPage(); // пустой объект
         page1.url = "https://page1.example.com";
         page1.title = "Страница #1";
@@ -59,9 +51,8 @@ public class MainPage {
 
         MainPage page3 = new MainPage("https://page3.example.com", "Страница #3", 5000); // объект с полным набором параметров
 
-        // Проверяем размеры страниц
-        page1.isSizeLessThan(3500); // Должно вернуть true
-        page2.isSizeLessThan(4000); // Должно вернуть false
-        page3.isSizeLessThan(6000); // Должно вернуть true
+        page1.isSizeLessThan(3500);
+        page2.isSizeLessThan(4000);
+        page3.isSizeLessThan(6000);
     }
 }
